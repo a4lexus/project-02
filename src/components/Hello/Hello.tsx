@@ -1,7 +1,10 @@
 
-function Hello(){
+function Hello() {
 
-    return <p>Hello React!!!</p>
+    return (
+            <p>Hello React!!!</p>
+        
+    )
 }
 
-export default Hello;
+export default Hello
