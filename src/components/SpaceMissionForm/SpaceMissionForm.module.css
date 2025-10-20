@@ -1,0 +1,18 @@
+.container{
+    background-color: lightblue;
+    padding: 24px;
+    margin: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 12px;
+}
+.container > input{
+    border-radius: 12px;
+    border-color: red;
+}
+
+/*lowerCamelCase, kebab case, Pascal case, CamelCase,snake_case, SCREAMING_SNAKE_CASE*/
+.nameInput{
+    border-color: rgb(164, 126, 126);
+}
