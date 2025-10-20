@@ -1,0 +1,22 @@
+h2{
+    background-color: aquamarine;
+    border-radius: 14px;
+}
+.container {
+    background-color: rgba(32, 234, 234, 0.322);
+    padding: 18px;
+    margin: 12px;
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+}
+.container>button{
+    background-color: aquamarine;
+    border-radius: 14px;
+}
+.apis{
+    font-size: 20px;
+    background-color:aquamarine;
+    border-radius: 14px;
+    
+}
