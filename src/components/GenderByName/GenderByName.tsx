@@ -35,7 +35,7 @@ export default function GenderByName() {
       <h2>Gender By Name</h2>
       <p>{message}</p>
       <p className={styles.apis}>
-        имя: {name} <br /> пол: {gender} <br /> страна: {country} <br />{" "}
+        имя: {name} <br /> пол: {gender} <br /> страна: {country} <br />
         вероятность:
         {probability} <br /> Остаток запросов (credits): {remaining_credits}
       </p>
