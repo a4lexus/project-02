@@ -5,8 +5,8 @@ export default function Counter() {
   // useState принимает начальное значение переменной состояния
   // возвращает кортеж(tuple), в котором на первом месте - переменная состояния(state)
   // на втором месте - функция сеттер
-  
-  const [secretNumber, setSecretNumber] = useState (-3);
+
+  const [secretNumber, setSecretNumber] = useState(-3);
   function handlePlus() {
     //setCount(count + 1);
     setCount((prev) => prev + 1);
@@ -19,22 +19,20 @@ export default function Counter() {
   }
   function finishGame() {
     setCount(0);
-    setSecretNumber(Math.floor(Math.random() * 20)-10);
+    setSecretNumber(Math.floor(Math.random() * 20) - 10);
     console.log(secretNumber);
   }
   if (count === secretNumber)
     return (
       <div>
         Game is completed!
-        <button onClick={handleClear}>Start over</button>
+        <button onClick={finishGame}>Start over</button>
       </div>
     );
 
-  if (count === secretNumber) return <p>Game is compleed!</p>;
   return (
     <div>
       {/* {count === secretNumber? <div>Bingo}</div> : null} */}
-      
       <button type="button" onClick={handleMinus}>
         -
       </button>
