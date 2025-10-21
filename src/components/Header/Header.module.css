@@ -1,0 +1,22 @@
+.header {
+  background-color: lightblue;
+  padding: 24px 60px;
+  width: 100%;
+}
+.header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  font-size: larger;
+}
+.link {
+  padding: 4px;
+  color: black;
+  font-size: 24px;
+}
+.link:hover {
+  color: goldenrod;
+}

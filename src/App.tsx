@@ -1,52 +1,38 @@
-import "./App.css";
-import AgeByName from "./components/AgeByName/AgeByName";
-import Counter from "./components/Counter/Counter";
-import EffectExample from "./components/EffectExample/EffectExample";
-import GenderByName from "./components/GenderByName/GenderByName";
-import Goodbye from "./components/Goodbye/Goodbye";
-import Hello from "./components/Hello/Hello";
-import PersonalGreeting from "./components/PersonalGreeting/PersonalGreeting";
-import ProductCard from "./components/ProductCard/ProductCard";
-import ProfileCard from "./components/ProfileCard/ProfileCard";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import GenderReveal from "./components/GenderReveal/GenderReveal";
 import RandomJoke from "./components/RandomJoke/RandomJoke";
+import Home from "./pages/Home/Home";
+import NotFound from "./pages/NotFound/NotFound";
+import MainLayout from "./layouts/MainLayout";
+import { ROUTES } from "./constants/routes";
+import Cohort68 from "./pages/Cohort68/Cohort68";
 import SpaceMissionForm from "./components/SpaceMissionForm/SpaceMissionForm";
-import Tool from "./components/Tool/Tool";
-import WeightCalculator from "./components/WeightCalculator/WeightCalculator";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
     <>
-      <p>Hello</p>
-      <AgeByName />
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path={ROUTES.GENDER_REVEAL} element={<GenderReveal />} />
+            <Route path={ROUTES.SPACE_MISSION} element={<SpaceMissionForm />} />
+            <Route path={ROUTES.RANDOM_JOKE} element={<RandomJoke />} />
+            <Route path={ROUTES.COHORT_68} element={<Cohort68 />} />
+            <Route path={ROUTES.ABOUT} element={<About />} />
+            <Route path={ROUTES.CONTACT} element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </HashRouter>
+
+      {/* <AgeByName />
       <GenderByName />
-      
-      <Hello />
       <Counter />
-
-      <RandomJoke />
       <WeightCalculator />
-
-      <Tool />
-      <EffectExample />
-      <SpaceMissionForm />
-      <Goodbye />
-      {/* передаём пропс в компонент - как аргумент*/}
-      <PersonalGreeting name="Alexej" />
-      <PersonalGreeting name="Fred" />
-      <ProductCard
-        title={"Opaeroo Paarungsspielzeug für Hunde"}
-        image={
-          "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT6dCWJhg_NWxlD6zuYn_a0CDMkebqD3IWtGcPHu6ZOhKs5KmI9eb9c6W41D6RlFy1PzLVs8pTI-JJDLThOPMEAbQ99Pg6ve69oNvUt2q6acOtAv5sXHBjIKvCMBLNNfxjN5sNTGIm3NQ&usqp=CAc"
-        }
-        price={86.99}
-      />
-      <ProfileCard
-        avatar={"https://img.wattpad.com/cover/331917526-256-k729272.jpg"}
-        name={"Neteyam"}
-        description={
-          "Neteyam war der erstgeborene Sohn von Jake & Neytiri, sowie der Bruder von Lo'ak und Tuktirey und der Adoptivbruder von Kiri . Er erlag einer Schussverletzung. Er war laut Lo'ak der Lieblings Sohn von Neytiri und Jake."
-        }
-      />
+      <EffectExample /> */}
     </>
   );
 }
