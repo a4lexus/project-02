@@ -20,8 +20,8 @@ export default function ProductsList() {
       <ul>
         {products.map((p) => (
           <li key={p.id}>
-            {p.title}
-            <img src={p.images[0]} alt={p.title} width={"200px"}/>
+            {p.title} <br />
+            <img src={p.images[0]} alt={p.title} width={"200px"}/> <br />
             <Link to={`/products/${p.id}`}>To product</Link>
           </li>
         ))}
