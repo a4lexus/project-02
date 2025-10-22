@@ -4,7 +4,7 @@ import RandomJoke from "./components/RandomJoke/RandomJoke";
 import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import MainLayout from "./layouts/MainLayout";
-import { ROUTES as R } from "./constants/routes";
+import { ROUTES as R, ROUTES } from "./constants/routes";
 import Cohort68 from "./pages/Cohort68/Cohort68";
 import SpaceMissionForm from "./components/SpaceMissionForm/SpaceMissionForm";
 import About from "./pages/About/About";
@@ -15,6 +15,8 @@ import Profile from "./pages/Profile/Profile";
 import Country from "./components/Country/Country";
 import ProductsList from "./pages/ProductsList/ProductsList";
 import ProductPage from "./pages/ProductPage/ProductPage";
+import UserList from "./pages/UserList/UserList";
+import UserPage from "./pages/UserPage/UserPage";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
             <Route path="/countries/:id/:slug" element={<Country />} />
             <Route path="/products" element={<ProductsList />} />
             <Route path="/products/:id" element={<ProductPage />} />
+            <Route path={ROUTES.USERS} element={<UserList />} />
+            <Route path="/users/:id" element={<UserPage />} />
           </Route>
         </Routes>
       </HashRouter>
