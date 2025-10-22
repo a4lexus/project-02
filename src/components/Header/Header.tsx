@@ -35,6 +35,9 @@ export default function Header() {
         <NavLink to="/products" className={getClass}>
           Products
         </NavLink>
+        <NavLink to={R.USERS} className={getClass}>
+          Users
+        </NavLink>
       </nav>
     </header>
   );
