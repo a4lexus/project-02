@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react";
-import type { Product } from "../../types/Product";
 import { Link } from "react-router-dom";
+import useProducts from "../../hooks/useProducts";
 
 export default function ProductsList() {
-  const [products, setProduct] = useState<Product[]>([]);
+  const {products,message,loading} = useProducts();
 
-  async function fetchProducts() {
-    const res = await fetch("https://api.escuelajs.co/api/v1/products");
-    const arr = await res.json();
-    setProduct(arr);
+  if (loading){
+    return <p>Loading...</p>
   }
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  if (message) {
+    return <p>{message}</p>
+  }
 
   return (
     <div>
@@ -21,7 +18,7 @@ export default function ProductsList() {
         {products.map((p) => (
           <li key={p.id}>
             {p.title} <br />
-            <img src={p.images[0]} alt={p.title} width={"200px"}/> <br />
+            <img src={p.images[0]} alt={p.title} width={"200px"} /> <br />
             <Link to={`/products/${p.id}`}>To product</Link>
           </li>
         ))}
@@ -29,9 +26,3 @@ export default function ProductsList() {
     </div>
   );
 }
-
-// выпишите на отдельном листе названия хуков и что они делают
-// useState
-// useEffect
-// useParams
-// useSearchParams

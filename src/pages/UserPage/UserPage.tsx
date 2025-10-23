@@ -17,9 +17,5 @@ export default function UserPage() {
     fetchUserById(id || "");
   }, [id]);
 
-  return (
-    <div>
-      {user ? <UserCard user={user} /> : null}
-    </div>
-  );
+  return <div>{user ? <UserCard user={user} /> : null}</div>;
 }

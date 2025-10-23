@@ -17,6 +17,7 @@ import ProductsList from "./pages/ProductsList/ProductsList";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import UserList from "./pages/UserList/UserList";
 import UserPage from "./pages/UserPage/UserPage";
+import CatFacts from "./pages/CatFacts/CatFacts";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="/products/:id" element={<ProductPage />} />
             <Route path={ROUTES.USERS} element={<UserList />} />
             <Route path="/users/:id" element={<UserPage />} />
+            <Route path="/cat-facts" element={<CatFacts />} />
           </Route>
         </Routes>
       </HashRouter>
