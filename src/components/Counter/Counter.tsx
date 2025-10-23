@@ -1,27 +1,15 @@
-import { useState } from "react";
+import useCounter from "./useCounter";
 
 export default function Counter() {
-  const [count, setCount] = useState(0);
-  // useState принимает начальное значение переменной состояния
-  // возвращает кортеж(tuple), в котором на первом месте - переменная состояния(state)
-  // на втором месте - функция сеттер
+  const {
+    count,
+    secretNumber,
+    finishGame,
+    handleClear,
+    handlePlus,
+    handleMinus,
+  } = useCounter();
 
-  const [secretNumber, setSecretNumber] = useState(-3);
-  function handlePlus() {
-    //setCount(count + 1);
-    setCount((prev) => prev + 1);
-  }
-  function handleMinus() {
-    setCount((prev) => prev - 1);
-  }
-  function handleClear() {
-    setCount(0);
-  }
-  function finishGame() {
-    setCount(0);
-    setSecretNumber(Math.floor(Math.random() * 20) - 10);
-    console.log(secretNumber);
-  }
   if (count === secretNumber)
     return (
       <div>
@@ -46,5 +34,3 @@ export default function Counter() {
     </div>
   );
 }
-// Создать кнопку -1, чтобы она работала
-// доп. создать кнопку clear - которая бы сбрасывала каунтер до 0

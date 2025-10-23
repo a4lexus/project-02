@@ -1,29 +1,22 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import type { User } from "../../types/User";
+import UserCard from "../../components/UserCard/UserCard";
+import useUsers from "../../hooks/useUsers";
 
 export default function UsersList() {
-  const [users, setUser] = useState<User[]>([]);
+  const { users, message, loading } = useUsers();
 
-  async function fetchUsers() {
-    const res = await fetch("https://api.escuelajs.co/api/v1/users");
-    const arr = await res.json();
-    setUser(arr);
+  if (loading) {
+    return <p>Loading...</p>;
   }
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  if (message) {
+    return <p>{message}</p>;
+  }
 
   return (
     <div>
       UsersList
       <ul>
         {users.map((user) => (
-          <li key={user.id}>
-            {user.name} <br />
-            <img src={user.avatar} alt={user.email}  width={"200px"}/> <br />
-            <Link to={`/users/${user.id}`}>To user</Link>
-          </li>
+          <UserCard user={user} key={user.id} />
         ))}
       </ul>
     </div>

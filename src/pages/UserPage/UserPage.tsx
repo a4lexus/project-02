@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { User } from "../../types/User";
+import UserCard from "../../components/UserCard/UserCard";
 
 export default function UserPage() {
   const { id } = useParams();
@@ -18,11 +19,7 @@ export default function UserPage() {
 
   return (
     <div>
-      User Page
-      <h2>{user?.name}</h2>
-      <p>{user?.email}</p>
-      <img src={user?.avatar}  width={"200px"}/>
-      <p>{user?.role}</p>
+      {user ? <UserCard user={user} /> : null}
     </div>
   );
 }
